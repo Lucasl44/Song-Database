@@ -5,11 +5,16 @@ const passport = require("passport");
 const app = express();
 
 const connection = require("./connection");
+const { verifyStrategy, registerStrategy, loginStrategy } = require("./middleware/auth");
 const User = require("./models/user");
 const userRouter = require("./routes/user");
 
 app.use(express.json());
 app.use(passport.initialize());
+
+passport.use("register", registerStrategy);
+passport.use("login", loginStrategy)
+passport.use(verifyStrategy);
 
 app.use("/users", userRouter);
 
