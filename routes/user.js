@@ -42,12 +42,14 @@ const login = async (req, res, next) => {
     })(req, res, next);
 };
 
+const logout = async (req, res) => {
+    req.logOut();
+    res.redirect("/");
+};
+// trying to get a logout function
 router.get("/", passport.authenticate("jwt", session), profile);
 router.post("/register", passport.authenticate("register", session), register);
 router.post("/login", login);
-router.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-});
+router.get("/logout", logout);
 
-module.exports = router;
+module.exports = router;  
