@@ -1,5 +1,6 @@
 const Music = require("../models/index");
 
+
 const allMusic = async () => await Music.findAll({});
 
 const addMusic = async (music) => await Music.create(music);
@@ -14,6 +15,8 @@ const editMusic = async (id, title, artist, album) => {
 };
 
 const deleteMusic = async (id) => await Music.destroy({where: {id}});
+
+
 
 
 module.exports = {
