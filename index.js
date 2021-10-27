@@ -13,7 +13,8 @@ app.use(express.json());
 app.use(passport.initialize());
 
 passport.use("register", registerStrategy);
-passport.use("login", loginStrategy)
+passport.use("login", loginStrategy);
+passport.use("logout", verifyStrategy);
 passport.use(verifyStrategy);
 
 app.use("/users", userRouter);

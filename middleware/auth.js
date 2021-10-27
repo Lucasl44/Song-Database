@@ -44,7 +44,7 @@ const verify = (token, next) => {
     try {
         next(null, token.user);
     } catch (error) {
-        next(error)
+        next(error);
     }
 };
 

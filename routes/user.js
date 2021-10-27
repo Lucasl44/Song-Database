@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const ExtractJwt = require("passport-jwt").ExtractJwt;
 
 const session = {session: false};
 
@@ -12,7 +13,7 @@ const register = (req, res, next) => {
     if (req.user.email) {
         res.status(201).json({msg: "New User Registered", user: [req.user]});
     } else {
-        res.status(401).json({msg: "Email already used"});
+        res.status(401).json({msg: "Email has already been used"});
     };
 };
 
@@ -42,14 +43,8 @@ const login = async (req, res, next) => {
     })(req, res, next);
 };
 
-const logout = async (req, res) => {
-    req.logOut();
-    res.redirect("/");
-};
-// trying to get a logout function
 router.get("/", passport.authenticate("jwt", session), profile);
 router.post("/register", passport.authenticate("register", session), register);
 router.post("/login", login);
-router.get("/logout", logout);
 
 module.exports = router;  
