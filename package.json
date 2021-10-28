@@ -1,0 +1,30 @@
+{
+  "name": "Song-Database-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucasl44/Song-Database-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucasl44/Song-Database-/issues"
+  },
+  "homepage": "https://github.com/Lucasl44/Song-Database-#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "nanoid": "^3.1.30",
+    "nodemon": "^2.0.14",
+    "sequelize": "^6.8.0",
+    "yargs": "^17.2.1"
+  }
+}
