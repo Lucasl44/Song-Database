@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const connection = require("../connection");
 
-module.exports = connection.define("User",
+const User = connection.define("User",
     {
         email: {
             type: DataTypes.STRING,
@@ -19,3 +19,5 @@ module.exports = connection.define("User",
         indexes: [{unique: true, fields: ["email"]}]
     }
 );
+
+module.exports = User;
