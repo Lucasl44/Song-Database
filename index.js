@@ -15,13 +15,13 @@ const playlistRouter = require("./routes/playlist")
 
 app.use(express.json());
 app.use(passport.initialize());
-
-app.get("/", (req, res) => res.status(200).json({msg: "Worked!"}));
+// this is a comment whatever
+// app.get("/", (req, res) => res.status(200).json({msg: "Worked!"}));
 app.use("/index", musicRouter);
 app.use("/playlist", playlistRouter);
 passport.use("register", registerStrategy);
 passport.use("login", loginStrategy);
-passport.use("logout", verifyStrategy);
+// passport.use("logout", verifyStrategy);
 passport.use(verifyStrategy);
 
 app.use("/users", userRouter);
