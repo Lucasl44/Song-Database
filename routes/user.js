@@ -1,12 +1,11 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
-const ExtractJwt = require("passport-jwt").ExtractJwt;
 
 const session = {session: false};
 
 const profile = (req, res, next) => {
-    res.status(200).json({msg: "profile", user: req.user, token: req.query.secret_token})
+    res.status(200).json({msg: "profile", user: req.user, token: req.query.secret_token});
 };
 
 const register = (req, res, next) => {
@@ -47,4 +46,4 @@ router.get("/", passport.authenticate("jwt", session), profile);
 router.post("/register", passport.authenticate("register", session), register);
 router.post("/login", login);
 
-module.exports = router;  
+module.exports = router; 
