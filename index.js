@@ -25,7 +25,7 @@ passport.use(verifyStrategy);
 
 app.use("/users", userRouter);
 
-app.listen(process.env.HTTP_PORT || 80, () => {
+app.listen(process.env.HTTP_PORT || process.env.PORT || 80, () => {
     connection.authenticate();
     User.sync({alter: true});
     Music.sync({alter: true});
