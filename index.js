@@ -21,7 +21,6 @@ app.use("/index", musicRouter);
 app.use("/playlist", playlistRouter);
 passport.use("register", registerStrategy);
 passport.use("login", loginStrategy);
-// passport.use("logout", verifyStrategy);
 passport.use(verifyStrategy);
 
 app.use("/users", userRouter);
