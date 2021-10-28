@@ -4,8 +4,8 @@ let connection;
 
 if (process.env.NODE_ENV === "production") {
 
-    module.exports = new Sequelize(`${process.env.DATABASE_URL}?sslmode=require`, {
-        url: process.env.DATABASE_URL,
+    module.exports = new Sequelize(`${process.env.HEROKU_POSTGRESQL_YELLOW_URL}?sslmode=require`, {
+        url: process.env.HEROKU_POSTGRESQL_YELLOW_URL,
         dialect: "postgres",
         dialectOptions: {
             ssl: {
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
     });
 
 } else {
-    console.log("else hit");
+
     module.exports = new Sequelize(
         process.env.DB_NAME,
         process.env.DB_USER,
