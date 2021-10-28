@@ -4,6 +4,10 @@ const passport = require("passport");
 
 const session = {session: false};
 
+router.get("/test", (req, res) => {
+    res.send("hello world");
+});
+
 const profile = (req, res, next) => {
     res.status(200).json({msg: "profile", user: req.user, token: req.query.secret_token});
 };
