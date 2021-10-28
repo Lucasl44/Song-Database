@@ -1,5 +1,6 @@
 {
-  "name": "one-week-project",
+  "name": "Song-Database-",
+
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Lucasl44/Song-Database-.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -30,5 +32,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
+
   }
 }
