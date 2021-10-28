@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const passport = require("passport");
 const app = express();
-// const port = process.env.PORT;
+const port = process.env.PORT || 80;
 
 const connection = require("./connection");
 const { verifyStrategy, registerStrategy, loginStrategy } = require("./middleware/auth");
@@ -26,7 +26,7 @@ passport.use(verifyStrategy);
 
 app.use("/users", userRouter);
 
-app.listen(process.env.PORT || 80, () => {
+app.listen(port, () => {
     connection.authenticate();
     User.sync({alter: true});
     Music.sync({alter: true});
