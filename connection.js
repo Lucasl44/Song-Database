@@ -1,7 +1,5 @@
 const { Sequelize } = require("sequelize");
 
-let connection;
-
 if (process.env.NODE_ENV === "production") {
 
     module.exports = new Sequelize(`${process.env.DATABASE_URL}?sslmode=require`, {
@@ -15,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
     });
 
 } else {
-    console.log("else hit");
+
     module.exports = new Sequelize(
         process.env.DB_NAME,
         process.env.DB_USER,
