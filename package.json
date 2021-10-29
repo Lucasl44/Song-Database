@@ -1,5 +1,5 @@
 {
-  "name": "Song-Database-",
+  "name": "song_database",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,6 +7,9 @@
     "start": "node index.js",
     "dev": "node ./node_modules/nodemon/bin/nodemon.js index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "14.17.5"
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,7 @@
   "bugs": {
     "url": "https://github.com/Lucasl44/Song-Database-/issues"
   },
+
   "homepage": "https://github.com/Lucasl44/Song-Database-#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
