@@ -3,7 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const passport = require("passport");
 const app = express();
-const port = process.env.PORT;
+const cors = require("cors");
+
 
 const connection = require("./connection");
 const { verifyStrategy, registerStrategy, loginStrategy } = require("./middleware/auth");
@@ -15,9 +16,9 @@ const musicRouter = require("./routes/index");
 const playlistRouter = require("./routes/playlist")
 
 app.use(express.json());
+app.use(cors());
 app.use(passport.initialize());
-// this is a comment whatever
-// app.get("/", (req, res) => res.status(200).json({msg: "Worked!"}));
+
 app.use("/index", musicRouter);
 app.use("/playlist", playlistRouter);
 passport.use("register", registerStrategy);

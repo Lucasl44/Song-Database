@@ -4,16 +4,13 @@ const passport = require("passport");
 
 const session = {session: false};
 
-// router.get("/test", (req, res) => {
-//     res.send("hello world");
-// });
-
 const profile = (req, res, next) => {
     res.status(200).json({msg: "profile", user: req.user, token: req.query.secret_token});
 };
 
 const register = (req, res, next) => {
     if (req.user.email) {
+        console.log(req.user);
         res.status(201).json({msg: "New User Registered", user: [req.user]});
     } else {
         res.status(401).json({msg: "Email has already been used"});
