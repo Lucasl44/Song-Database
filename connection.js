@@ -2,8 +2,8 @@ const { Sequelize } = require("sequelize");
 
 if (process.env.NODE_ENV === "production") {
 
-    module.exports = new Sequelize(`${process.env.HEROKU_POSTGRESQL_YELLOW_URL}?sslmode=require`, {
-        url: process.env.HEROKU_POSTGRESQL_YELLOW_URL,
+    module.exports = new Sequelize(`${process.env.DATABASE_URL}?sslmode=require`, {
+        url: process.env.DATABASE_URL,
         dialect: "postgres",
         dialectOptions: {
             ssl: {
