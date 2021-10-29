@@ -22,10 +22,12 @@ app.use("/playlist", playlistRouter);
 passport.use("register", registerStrategy);
 passport.use("login", loginStrategy);
 passport.use(verifyStrategy);
-
 app.use("/users", userRouter);
+app.get("*", (req, res) => {
+    res.status(404).json({msg: "error"})
+});
 
-app.listen(process.env.HTTP_PORT || 80, () => {
+app.listen(process.env.PORT || process.env.HTTP_PORT || 80, () => {
     connection.authenticate();
     User.sync({alter: true});
     Music.sync({alter: true});

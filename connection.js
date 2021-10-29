@@ -1,7 +1,5 @@
 const { Sequelize } = require("sequelize");
 
-let connection;
-
 if (process.env.NODE_ENV === "production") {
 
     module.exports = new Sequelize(`${process.env.HEROKU_POSTGRESQL_YELLOW_URL}?sslmode=require`, {
